@@ -1,0 +1,21 @@
+public class Solution {
+    public String reverseString(String s) 
+    {
+        int start = 0;
+        int end = s.length();
+        char [] charArray = s.toCharArray();
+        reverseArray(charArray, start, end-1);
+        return String.valueOf(charArray);
+    }
+    
+    private void reverseArray(char[] arr, int start, int end)
+    {
+        if (start >= end)
+            return ;
+        char temp;
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        reverseArray(arr, start+1, end-1);
+    }
+}
