@@ -1,0 +1,7 @@
+public class Solution 
+{
+    public String stringReversal(String s) 
+    {
+        return new StringBuffer(s).reverse().toString();
+    }
+}
