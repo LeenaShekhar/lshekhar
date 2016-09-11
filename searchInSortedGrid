@@ -1,0 +1,40 @@
+package basic;
+
+public class SearchInSortedGrid
+{
+    public boolean search(int [] [] matrix, int dimension, int number)
+    {
+        int startRow = dimension-1;
+        int startColumn = 0;
+        while(startRow >= 0 && startColumn <= dimension-1)
+        {
+            int matrixElement = matrix[startRow][startColumn];
+            if(matrixElement == number)
+            {
+                System.out.println("\nElement found at " + startRow + " and " + startColumn);
+                return true;
+            }
+            if(matrixElement > number)
+            {
+                startRow--;
+            }
+            else if(matrixElement < number)
+            {
+                startColumn++;
+            }
+        }
+        System.out.println("\n Element not found");
+        return false;
+    }
+
+    public static void main (String[] args)
+    {
+        int [] [] matrix = { {10, 20, 30, 40},
+                {15, 25, 35, 45},
+                {27, 29, 37, 48},
+                {32, 33, 39, 50},
+        };
+        SearchInSortedGrid  obj = new SearchInSortedGrid();
+        System.out.println(obj.search(matrix, 4, 37));
+    }
+}
