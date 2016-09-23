@@ -1,0 +1,33 @@
+package leetCode;
+
+
+/**
+ * Created by leena on 9/23/16.
+ */
+public class removingElement
+{
+    public static int removeElement(int[] array, int value)
+    {
+        int current=0;
+        int lengthOfArray = array.length;
+        for (int moving = 0; moving < lengthOfArray; moving++)
+        {
+            if(array[moving] != value)
+            {
+                array[current] = array[moving];
+                current++;
+            }
+        }
+        return current;
+    }
+
+
+    public static void main(String[] args)
+    {
+        int array[] = new int[]{3,2,2,3};
+        int value =3;
+        int length = removeElement(array, value);
+        System.out.println(length);
+
+    }
+}
